@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" method="post" id="myform">
+      <fieldset id="contact_us">
+        <legend>Contact Us</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <span hidden>Name is required.</span>
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your_name@xyz.com"
+          required
+        />
+        <span hidden>Enter valid email.</span>
+
+        <label for="phone_number">Phone:</label>
+        <input
+          type="tel"
+          id="phone_number"
+          name="phone_number"
+          pattern="(\d{3}[\-]\d{3}[\-]\d{4})"
+          placeholder="xxx-xxx-xxxx"
+          required
+        />
+        <span hidden>Enter valid phone number.</span>
+
+        <label for="msg">Your message:</label>
+        <textarea name="msg" id="msg" maxlength="100" required></textarea>
+        <span hidden>Message is required.</span>
+
+        <div class="checks">
+          <input
+            type="checkbox"
+            name="copy_email"
+            id="copy_email"
+            value="copy_email"
+          />
+          <label for="copy_email">Send a copy to my email</label>
+        </div>
+
+        <div class="checks">
+          <p>Preferred contact method:</p>
+          <input
+            type="radio"
+            name="contact"
+            id="contact_email"
+            value="contact_email"
+          />
+          <label for="contact_email">Email</label>
+
+          <input
+            type="radio"
+            name="contact"
+            id="contact_phone"
+            value="contact_phone"
+          />
+          <label for="contact_phone">Phone</label>
+
+          <input
+            type="radio"
+            name="contact"
+            id="contact_text"
+            value="contact_text"
+          />
+          <label for="contact_text">Text</label>
+        </div>
+
+        <input type="submit" id="submit" value="Contact Us" />
+      </fieldset>
+    </form>
+  </body>
+</html>
