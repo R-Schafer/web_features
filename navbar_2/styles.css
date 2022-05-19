@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  background-color: cadetblue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  margin: 6px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: rgb(106, 132, 148);
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  outline: none;
+  background: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .bar,
+.hamburger:before,
+.hamburger:after {
+  width: 85%;
+  height: 4px;
+  background-color: white;
+  margin: 5px 30px;
+  transition: 0.4s;
+  content: "";
+  display: block;
+  border-radius: 2px;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-6px, -5px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  display: block;
+  position: fixed;
+  left: 100%;
+  width: 66%;
+  min-height: 100vh;
+  z-index: 98;
+  background-color: rgb(106, 132, 148);
+  transition: 0.4s;
+  opacity: 50%;
+}
+
+.mobile-nav.is-active {
+  left: 40%;
+}
+
+.mobile-nav a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  background-color: rgb(2, 94, 94);
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
